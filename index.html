@@ -547,11 +547,35 @@
             .timeline-item:nth-child(even)::after {
                 left: 21px;
             }
+
+            .about-image {
+                order: -1;
+                margin-bottom: 30px;
+            }
         }
 
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
             }
 
             .hamburger {
@@ -573,6 +597,10 @@
             .hero-buttons {
                 justify-content: center;
             }
+
+            section {
+                padding: 60px 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -583,6 +611,28 @@
             .hero-buttons .btn {
                 width: 100%;
                 text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+
+            .skills-container,
+            .contact-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
